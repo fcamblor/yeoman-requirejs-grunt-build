@@ -25,9 +25,10 @@ require.config({
     }
 });
 
-require(['app', 'jquery', 'bootstrap'], function (app, $) {
+require(['app', 'jquery', 'hbs!templates/hello/Hello', 'bootstrap'], function (app, $, helloTpl) {
     'use strict';
     // use app here
     console.log(app);
+    console.log(helloTpl({who: "Bob sponge"}));
     console.log('Running jQuery %s', $().jquery);
 });
