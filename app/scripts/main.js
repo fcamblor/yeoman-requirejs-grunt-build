@@ -29,6 +29,11 @@ require(['app', 'jquery', 'hbs!templates/hello/Hello', 'bootstrap'], function (a
     'use strict';
     // use app here
     console.log(app);
-    console.log(helloTpl({who: "Bob sponge"}));
+    console.log(helloTpl({who: 'Bob sponge'}));
     console.log('Running jQuery %s', $().jquery);
+    $('#lazyLoadDep').click(function () {
+        require([ 'lazydep' ], function (lazyDep) {
+            console.log('lazy dep : ' + lazyDep);
+        });
+    });
 });
